@@ -1,7 +1,15 @@
+import React form "react";
 import styles from "./ListRow.module.css";
 
-const ListCell = ({ children }) => {
-  return <tr className={styles.cell}>{children}</tr>;
+const ListCell = ({ children , onRowClick}) => {
+  const handleClick=()=>{
+    onRowClick();
+  };
+  return (
+      <tr className={styles.cell} onClick={handleClick}>
+      {children}
+    </tr>;
+  );
 };
 
 export default ListCell;
